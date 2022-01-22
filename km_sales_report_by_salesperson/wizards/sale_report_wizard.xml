@@ -35,7 +35,5 @@
         <field name="target">new</field>
     </record>
 
-    <menuitem action="action_sale_report_wizard"
-              id="menu_sale_report_wizard"
-              parent="sale.menu_sale_report"/>
+    <menuitem action="action_sale_report_wizard" id="menu_sale_report_wizard" parent="sale.menu_sale_report"/>
 </odoo>
