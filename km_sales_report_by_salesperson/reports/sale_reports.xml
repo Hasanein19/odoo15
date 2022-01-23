@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <report
-                id="action_report_by_salesperson"
-                string="By Salesperson"
-                model="sale.salesperson.report"
-                report_type="qweb-pdf"
-                file="km_sales_report_by_salesperson.sale_report_view"
-                name="km_sales_report_by_salesperson.sale_report_view"
-        />
-    </data>
+
+    <record id="action_report_by_salesperson" model="ir.actions.report">
+        <field name="name">By Salesperson</field>
+        <field name="model">sale.salesperson.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">km_sales_report_by_salesperson.sale_report_view</field>
+        <field name="report_file">km_sales_report_by_salesperson.sale_report_view</field>
+        <field name="binding_model_id" ref="model_hospital_patient"/>
+        <field name="binding_type">report</field>
+    </record>
 </odoo>
