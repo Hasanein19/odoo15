@@ -6,8 +6,6 @@
         <field name="model">sale.salesperson.report</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">km_sales_report_by_salesperson.sale_report_view</field>
-        <field name="report_file">km_sales_report_by_salesperson.sale_report_view</field>
-        <field name="binding_model_id" ref="model_sale.salesperson"/>
-        <field name="binding_type">report</field>
+        <field name="report_file">km_sales_report_by_salesperson.sale_report_view</field>>
     </record>
 </odoo>
