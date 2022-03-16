@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<odoo>
+
+    <record id="purchase_order_form" model="ir.ui.view">
+        <field name="name">purchase.order.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/field[@name='state']" position="replace">
+                <field name="state" widget="statusbar"
+                       statusbar_visible="draft,sent,first_approval,second_approval,purchase"
+                       readonly="1"/>
+            </xpath>
+            <xpath expr="//header/button[@id='bid_confirm']" position="replace">
+            </xpath>
+            <xpath expr="//header/button[@id='draft_confirm']" position="replace">
+                <button name="move_to_first_approval"
+                        states="draft,sent"
+                         groups="purchase_access_right.first_approval_group"
+                        type="object"  string="First Approve"/>
+                <button name="move_to_second_approval" type="object" states="first_approval"
+                       string="Second Approve"
+                        groups="purchase_access_right.second_approval_group"
+                />
+                <button name="button_confirm" type="object" states="second_approval"
+                         string="Confirm Order"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
